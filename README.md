@@ -1,6 +1,6 @@
 # 🏥 Hospital Analytics Dashboard
 
-(./Dashboard/Home_Page.jpg)  
+![Dashboard Preview](./Dashboard/Home_Page.jpg)  
 *Interactive Hospital Analytics Dashboard built in Power BI*
 
 Transform raw hospital data into **actionable insights** for patient care, doctor performance, finance, and operations.
@@ -51,4 +51,4 @@ Transform raw hospital data into **actionable insights** for patient care, docto
 ## 👤 Author
 
 **Krithi Sheregar** – Data Analyst | Power BI | SQL | Healthcare Analytics  
-🔗 [GitHub](https://github.com/krithisheregar) | 🔗 [LinkedIn](https://www.linkedin.com/in/krithi-sheregar-5545071b9/)  
+🔗 [GitHub](https://github.com/krithisheregar) | 🔗 [LinkedIn](https://www.linkedin.com/in/krithi-sheregar-5545071b9/)
