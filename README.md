@@ -1,23 +1,26 @@
 # 🏥 Hospital Analytics Dashboard
----
-Transform raw hospital data into **actionable insights** for patient care, doctor performance, finance, and operations.
----
-|  Interactive Home Page |
-|------------------|
-| ![Home](./Dashboard/Home_Page.jpg) |
 
-| Overview |
-|------------------|
-| ![Overview](./Dashboard/Overview_Page.jpg) |
+Transform raw hospital data into **actionable insights** for patient care, doctor performance, finance, and operations.
+
+---
+
+## 🖥️ Dashboard Overview
+
+### Interactive Home Page
+![Home](./Dashboard/Home_Page.jpg)
+
+### Overview Page
+![Overview](./Dashboard/Overview_Page.jpg)
+
 ---
 
 ## 📊 Key Features
 
-* **Patient Analytics:** Admissions, discharges, age groups, avg spend, satisfaction  
-* **Doctor Insights:** Fees, commissions, surgeries, workload tracking  
-* **Financial Metrics:** Revenue, discounts, billing trends, avg patient spend  
-* **Medicine & Inventory:** Stock vs. consumption, sales tracking  
-* **Operational KPIs:** Appointment scheduling, test & surgery status, calendar analysis  
+- **Patient Analytics:** Admissions, discharges, age groups, average spend, satisfaction  
+- **Doctor Insights:** Fees, commissions, surgeries, workload tracking  
+- **Financial Metrics:** Revenue, discounts, billing trends, average patient spend  
+- **Medicine & Inventory:** Stock vs. consumption, sales tracking  
+- **Operational KPIs:** Appointment scheduling, test & surgery status, calendar analysis  
 
 ---
 
@@ -33,23 +36,29 @@ Transform raw hospital data into **actionable insights** for patient care, docto
 
 ---
 
-## 🛠️ Tools & Tech
+## 🛠️ Tools & Technologies
 
-* **Power BI**, **DAX**, **SQL**, **Excel/CSV**.
-* Clean data model & scalable DAX measures.
-* Status indicators & what-if analysis.
+- **Power BI**
+- **DAX (Data Analysis Expressions)**
+- **SQL**
+- **Excel / CSV**
+- Clean data model & scalable DAX measures  
+- Status indicators & what-if analysis  
 
 ---
 
 ## 📈 Business Impact
 
-* Enables **leadership** to monitor hospital performance instantly.
-* Helps **doctors** track workload and commissions.
-* Supports **finance & operations teams** with actionable insights.
+- Enables **hospital leadership** to monitor performance at a glance  
+- Helps **doctors** track workload and commissions  
+- Supports **finance & operations teams** with actionable insights  
 
 ---
 
 ## 👤 Author
 
-**Krithi Sheregar** – Data Analyst | Power BI | SQL | Healthcare Analytics  
-🔗 [GitHub](https://github.com/krithisheregar) | 🔗 [LinkedIn](https://www.linkedin.com/in/krithi-sheregar-5545071b9/)
+**Krithi Sheregar**  
+Data Analyst | Power BI | SQL | Healthcare Analytics  
+
+🔗 GitHub: https://github.com/krithisheregar  
+🔗 LinkedIn: https://www.linkedin.com/in/krithi-sheregar-5545071b9/
