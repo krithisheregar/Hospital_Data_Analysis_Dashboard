@@ -1,0 +1,245 @@
+=====================================================
+   Hospital Analysis – DAX Definitions
+=====================================================
+
+
+=====================================================
+   ICON URL MEASURES
+=====================================================
+
+Calendar_Icon =
+"https://i.ibb.co/5W7pHTnK/schedule-1.png"
+
+Check_IconB =
+"https://i.ibb.co/Q3dd1Fx3/check-1.png"
+
+
+=====================================================
+   PATIENT METRICS
+=====================================================
+
+Patient_Count =
+DISTINCTCOUNT ( patient_info[patient_id] )
+
+Admitted_Status =
+"Total "
+    & CALCULATE (
+        [Patient_Count],
+        patient_info[patient_status] = "Admitted"
+    )
+    & " Patients Admitted."
+
+Discharge_Patient =
+CALCULATE (
+    [Patient_Count],
+    patient_info[patient_status] = "Discharged"
+)
+
+Discharge% =
+VAR All_Patients =
+    CALCULATE (
+        [Patient_Count],
+        ALL ( patient_info[patient_status] )
+    )
+RETURN
+    DIVIDE ( [Discharge_Patient], All_Patients )
+
+
+=====================================================
+   BILLING & FINANCIAL METRICS
+=====================================================
+
+Total_Bill_Amt =
+VAR Discount_Amt =
+    CALCULATE (
+        SUM ( Bills[Value] ),
+        Bills[Charges_Type] = "discount"
+    )
+VAR Total_Amt =
+    SUM ( Bills[Value] )
+RETURN
+    Total_Amt - Discount_Amt
+
+Avg_Spend =
+DIVIDE ( [Total_Bill_Amt], [Patient_Count] )
+
+Doctor_Fees =
+CALCULATE (
+    SUM ( Bills[Value] ),
+    Bills[Charges_Type] = "fees"
+)
+
+Total_Discount =
+    SUM ( Appointment[discount] )
+    + SUM ( patient_tests[discount] )
+
+
+=====================================================
+   DOCTOR COMMISSION
+=====================================================
+
+Dr_Commission_Rate =
+0.10
+
+Dr_Commission_Amt =
+[Total_Bill_Amt] * [Dr_Commission_Rate]
+
+Estimated_Commission =
+VAR Patient_Amount =
+    MAX ( 'Patient Amount'[Patient Amount] )
+VAR Commission_Rate =
+    MAX ( 'Commission %'[Commission %] )
+VAR Commission_Percentage =
+    DIVIDE ( Commission_Rate, 100 )
+RETURN
+    Patient_Amount * Commission_Percentage
+
+
+=====================================================
+   STOCK & MEDICINE
+=====================================================
+
+Total_Med_Sale_QTY =
+SUM ( medicine_patient[qty] )
+
+Total_Stock_QTY =
+SUM ( medical_stock_info[stock_qty] )
+
+
+=====================================================
+   STATUS ICONS
+=====================================================
+
+Status_Icon =
+IF (
+    appointment[status] = "Completed",
+    [Check_IconB],
+    [Calendar_Icon]
+)
+
+Test_Status_Icon =
+IF (
+    SELECTEDVALUE ( patient_tests[status] ) = "Completed",
+    [Check_IconB],
+    [Calendar_Icon]
+)
+
+Test_Status_Col =
+IF (
+    patient_tests[status] = "Completed",
+    [Check_IconB],
+    [Calendar_Icon]
+)
+
+Surgery_Status_Icon =
+IF (
+    SELECTEDVALUE ( patient_info[surgery_status] ) = "Completed",
+    [Check_IconB],
+    [Calendar_Icon]
+)
+
+
+=====================================================
+   DATE & TIME FORMATTING
+=====================================================
+
+Appointment_Time_Date =
+FORMAT ( appointment[appointment_time], "hh:mm AM/PM" )
+    & " ▪️ "
+    & FORMAT ( appointment[appointment_date], "dd-mmm" )
+
+Surgery_Time_Date =
+FORMAT ( patient_info[surgery_appointment_time], "hh:mm AM/PM" )
+    & " ▪️ "
+    & FORMAT ( patient_info[surgery_appointment_date], "dd-mmm" )
+
+Format_Discharge_Date =
+FORMAT ( patient_info[patient_discharge_date], "mmm-yy" )
+
+Discharge_Index =
+MONTH ( patient_info[patient_discharge_date] )
+
+
+=====================================================
+   CALENDAR TABLE
+=====================================================
+
+Calendar =
+ADDCOLUMNS (
+    CALENDARAUTO (),
+    "Month", FORMAT ( [Date], "MMM" ),
+    "Month-Index", MONTH ( [Date] ),
+    "Month-Year", FORMAT ( [Date], "MMM-YY" ),
+    "Day", FORMAT ( [Date], "DDD" ),
+    "Formatted-Date", FORMAT ( [Date], "dd-mmm-yy" )
+)
+
+
+=====================================================
+   AGE CATEGORY
+=====================================================
+
+Age_Category =
+VAR Age =
+    patient_info[patient_age]
+RETURN
+    SWITCH (
+        TRUE (),
+        Age >= 18 && Age <= 30, "18-30",
+        Age >= 31 && Age <= 45, "31-45",
+        Age >= 46 && Age <= 60, "46-60",
+        Age > 60, "60+",
+        Age < 18, "Under 18",
+        BLANK ()
+    )
+
+
+=====================================================
+   SATISFACTION STAR RATING
+=====================================================
+
+Satisfaction_Star_Rating =
+VAR Max_Stars = 5
+VAR Min_Value = 0
+VAR Max_Value = 5
+VAR Base_Value =
+    SUM ( patient_info[satisfaction_rating] )
+VAR Normalized_Value =
+    MIN (
+        MAX (
+            DIVIDE (
+                Base_Value - Min_Value,
+                Max_Value - Min_Value
+            ),
+            0
+        ),
+        1
+    )
+VAR Star_Count =
+    ROUND ( Normalized_Value * Max_Stars, 0 )
+RETURN
+    IF (
+        NOT ISBLANK ( Base_Value ),
+        REPT ( UNICHAR ( 9733 ), Star_Count )
+            & REPT ( UNICHAR ( 9734 ), Max_Stars - Star_Count )
+    )
+
+
+=====================================================
+   WHAT-IF PARAMETERS
+=====================================================
+
+Target =
+100
+
+Commission % =
+GENERATESERIES ( 0, 100, 1 )
+
+Commission % Value =
+SELECTEDVALUE ( 'Commission %'[Commission %] )
+
+Patient Amount =
+GENERATESERIES ( 100, 2000000, 1 )
+
+Patient Amount Value =
+SELECTEDVALUE ( 'Patient Amount'[Patient Amount] )
