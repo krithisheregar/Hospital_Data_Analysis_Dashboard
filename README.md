@@ -1,6 +1,6 @@
 # 🏥 Hospital Analytics Dashboard
 |  Home | Overview |
-|------------------|--------------------------|
+|------------------|------------------|
 | ![Home](./Dashboard/Home_Page.jpg) | ![Overview](./Dashboard/Overview_Page.jpg) |
 
 ---
