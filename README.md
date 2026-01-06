@@ -1,11 +1,11 @@
 # 🏥 Hospital Analytics Dashboard
 
-![Dashboard Preview](./Dashboard/Home_Page.jpg)  
+![Dashboard Preview](./Dashboard/Home Page.jpg)  
 *Interactive Hospital Analytics Dashboard built in Power BI*
 
 Transform raw hospital data into **actionable insights** for patient care, doctor performance, finance, and operations.
 
-![Overview Preview](./Dashboard/Overview_Page.jpg)  
+![Overview Preview](./Dashboard/Overview Page.jpg)  
 *Detailed Overview Page of the Dashboard*
 
 ---
@@ -24,27 +24,27 @@ Transform raw hospital data into **actionable insights** for patient care, docto
 
 | Patient Analytics | Doctor & Surgery Insights |
 |------------------|--------------------------|
-| ![Patients](./Dashboard/patient_page.jpg) | ![Doctors](./Dashboard/doctor_page.jpg) |
+| ![Patients](./Dashboard/Patient Page.jpg) | ![Doctors](./Dashboard/Doctor Page.jpg) |
 
 | Medicine & Inventory | Financial Metrics |
 |--------------------|-----------------|
-| ![Medicine](./Dashboard/medicine_page.jpg) | ![Finance](./Dashboard/finance_page.jpg) |
+| ![Medicine](./Dashboard/Medicine Page.jpg) | ![Finance](./Dashboard/Finance Page.jpg) |
 
 ---
 
 ## 🛠️ Tools & Tech
 
-* **Power BI**, **DAX**, **SQL**, **Excel/CSV**  
-* Clean data model & scalable DAX measures  
-* Status indicators & what-if analysis  
+* **Power BI**, **DAX**, **SQL**, **Excel/CSV**.
+* Clean data model & scalable DAX measures.
+* Status indicators & what-if analysis.
 
 ---
 
 ## 📈 Business Impact
 
-* Enables **leadership** to monitor hospital performance instantly  
-* Helps **doctors** track workload and commissions  
-* Supports **finance & operations teams** with actionable insights  
+* Enables **leadership** to monitor hospital performance instantly.
+* Helps **doctors** track workload and commissions.
+* Supports **finance & operations teams** with actionable insights.
 
 ---
 
