@@ -1,9 +1,12 @@
 # 🏥 Hospital Analytics Dashboard
 
-![Dashboard Preview](./images/Overview_Page.jpg)
+![Dashboard Preview](./Dashboard/Home_Page.jpg)  
 *Interactive Hospital Analytics Dashboard built in Power BI*
 
 Transform raw hospital data into **actionable insights** for patient care, doctor performance, finance, and operations.
+
+![Overview Preview](./Dashboard/Overview_Page.jpg)  
+*Detailed Overview Page of the Dashboard*
 
 ---
 
@@ -21,11 +24,11 @@ Transform raw hospital data into **actionable insights** for patient care, docto
 
 | Patient Analytics | Doctor & Surgery Insights |
 |------------------|--------------------------|
-| ![Patients](./images/patient_analytics.png) | ![Doctors](./images/doctor_insights.png) |
+| ![Patients](./Dashboard/patient_page.jpg) | ![Doctors](./Dashboard/doctor_page.jpg) |
 
-| Financial Metrics | Medicine & Inventory |
-|------------------|--------------------|
-| ![Finance](./images/finance_metrics.png) | ![Medicine](./images/medicine_inventory.png) |
+| Medicine & Inventory | Financial Metrics |
+|--------------------|-----------------|
+| ![Medicine](./Dashboard/medicine_page.jpg) | ![Finance](./Dashboard/finance_page.jpg) |
 
 ---
 
