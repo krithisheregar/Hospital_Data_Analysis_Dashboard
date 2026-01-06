@@ -1,4 +1,7 @@
 # 🏥 Hospital Analytics Dashboard
+---
+Transform raw hospital data into **actionable insights** for patient care, doctor performance, finance, and operations.
+---
 |  Interactive Home Page |
 |------------------|
 | ![Home](./Dashboard/Home_Page.jpg) |
