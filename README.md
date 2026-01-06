@@ -1,6 +1,6 @@
 # 🏥 Hospital Analytics Dashboard
 
-![Dashboard Preview](./Dashboard/Home_Page.jpg)  
+(./Dashboard/Home_Page.jpg)  
 *Interactive Hospital Analytics Dashboard built in Power BI*
 
 Transform raw hospital data into **actionable insights** for patient care, doctor performance, finance, and operations.
