@@ -1,6 +1,6 @@
 # 🏥 Hospital Analytics Dashboard
 
-![Dashboard Preview](./"C:\Users\krith\OneDrive\Documents\GMU Course Work\Projects\Hospital\Dashboard\Overview Page.jpg")  
+![Dashboard Preview](./images/Overview_Page.jpg)
 *Interactive Hospital Analytics Dashboard built in Power BI*
 
 Transform raw hospital data into **actionable insights** for patient care, doctor performance, finance, and operations.
